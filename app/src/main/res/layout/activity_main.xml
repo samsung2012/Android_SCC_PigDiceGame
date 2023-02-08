@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:fontFamily="monospace"
+        android:text="PIG"
+        android:textAlignment="center"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <TextView
+        android:id="@+id/youPlaying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="64dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="You"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/compPlaying"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="Computer"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/tvYouGamesWon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="casual"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/youPlaying"
+        app:layout_constraintTop_toBottomOf="@+id/youPlaying" />
+
+    <TextView
+        android:id="@+id/tvCompGamesWon"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="casual"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/compPlaying"
+        app:layout_constraintTop_toBottomOf="@+id/compPlaying" />
+
+    <TextView
+        android:id="@+id/tvYouTotalScore"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="casual"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvYouGamesWon"
+        app:layout_constraintTop_toBottomOf="@+id/tvYouGamesWon" />
+
+    <TextView
+        android:id="@+id/tvCompTotalScore"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="casual"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvCompGamesWon"
+        app:layout_constraintTop_toBottomOf="@+id/tvCompGamesWon" />
+
+    <TextView
+        android:id="@+id/tvYouTurnTotal"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="casual"
+        android:text="0"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/tvYouTotalScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvYouTotalScore" />
+
+    <TextView
+        android:id="@+id/compTurnTotal"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="35dp"
+        android:fontFamily="casual"
+        android:text="0"
+        android:textAlignment="textEnd"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/tvCompTotalScore"
+        app:layout_constraintTop_toBottomOf="@+id/tvCompTotalScore" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Games Won"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvCompGamesWon"
+        app:layout_constraintEnd_toStartOf="@+id/tvCompGamesWon"
+        app:layout_constraintStart_toEndOf="@+id/tvYouGamesWon" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Total Score"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvCompTotalScore"
+        app:layout_constraintEnd_toStartOf="@+id/tvCompTotalScore"
+        app:layout_constraintStart_toEndOf="@+id/tvYouTotalScore" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="Turn Total"
+        android:textSize="24sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvYouTurnTotal"
+        app:layout_constraintEnd_toStartOf="@+id/compTurnTotal"
+        app:layout_constraintStart_toEndOf="@+id/tvYouTurnTotal" />
+
+    <TextView
+        android:id="@+id/diceTotal"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="24dp"
+        android:fontFamily="casual"
+        android:text="0"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150dp"
+        android:fontFamily="sans-serif-smallcaps"
+        android:text="DIce Total"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnRoll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginBottom="64dp"
+        android:onClick="onBtnRollClick"
+        android:text="ROLL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnHold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:onClick="onBtnHoldClick"
+        android:text="HOLD"
+        app:layout_constraintBaseline_toBaselineOf="@+id/btnRoll"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewLeftDice"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="@+id/tvYouTurnTotal"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        tools:srcCompat="@drawable/dice_1" />
+
+    <ImageView
+        android:id="@+id/imageViewRightDice"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="@+id/compTurnTotal"
+        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        tools:srcCompat="@drawable/dice_2" />
+
+    <ImageView
+        android:id="@+id/ivWinner"
+        android:layout_width="387dp"
+        android:layout_height="426dp"
+        android:onClick="onWinLoseImageClick"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:srcCompat="@drawable/winner" />
+
+    <ImageView
+        android:id="@+id/ivLoser"
+        android:layout_width="387dp"
+        android:layout_height="426dp"
+        android:onClick="onWinLoseImageClick"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:srcCompat="@drawable/winner" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
