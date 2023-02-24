@@ -17,35 +17,36 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintVertical_bias="0.019" />
 
     <TextView
         android:id="@+id/youPlaying"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/you"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/compPlaying"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="32dp"
         android:fontFamily="sans-serif-condensed"
         android:text="@string/computer"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+        app:layout_constraintStart_toEndOf="@+id/youPlaying"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvYouGamesWon"
@@ -159,40 +160,39 @@
         android:id="@+id/diceTotal"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="136dp"
         android:fontFamily="casual"
         android:text="@string/dice_total"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/textView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btnRoll" />
 
     <TextView
         android:id="@+id/textView14"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="150dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="88dp"
         android:fontFamily="sans-serif-smallcaps"
         android:text="@string/dice_total_text"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/diceTotal" />
 
     <Button
         android:id="@+id/btnRoll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginBottom="64dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="56dp"
         android:onClick="onBtnRollClick"
         android:text="@string/roll"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/btnHold"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnHold"
@@ -205,49 +205,54 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
-        android:id="@+id/imageViewLeftDice"
-        android:layout_width="80dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:contentDescription="@string/left_dice"
-        app:layout_constraintStart_toStartOf="@+id/tvYouTurnTotal"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
-        tools:srcCompat="@drawable/dice_1" />
-
-    <ImageView
         android:id="@+id/imageViewRightDice"
         android:layout_width="80dp"
         android:layout_height="100dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
         android:contentDescription="@string/right_dice"
-        app:layout_constraintEnd_toEndOf="@+id/compTurnTotal"
-        app:layout_constraintTop_toBottomOf="@+id/textView11"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
         tools:srcCompat="@drawable/dice_2" />
 
     <ImageView
+        android:id="@+id/imageViewLeftDice"
+        android:layout_width="80dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="@string/left_dice"
+        app:layout_constraintStart_toStartOf="@+id/btnRoll"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        tools:srcCompat="@drawable/dice_1" />
+
+    <ImageView
         android:id="@+id/ivWinner"
-        android:layout_width="387dp"
-        android:layout_height="426dp"
+        android:layout_width="176dp"
+        android:layout_height="247dp"
         android:contentDescription="@string/winner_image"
         android:onClick="onWinLoseImageClick"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.255"
         app:srcCompat="@drawable/winner" />
 
     <ImageView
         android:id="@+id/ivLoser"
-        android:layout_width="387dp"
-        android:layout_height="426dp"
+        android:layout_width="182dp"
+        android:layout_height="254dp"
         android:contentDescription="@string/loser_image"
         android:onClick="onWinLoseImageClick"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.499"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView12"
+        app:layout_constraintVertical_bias="0.275"
         app:srcCompat="@drawable/winner" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

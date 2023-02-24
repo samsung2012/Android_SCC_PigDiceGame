@@ -4,6 +4,7 @@ import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.PersistableBundle
 import android.util.Log
 import android.view.View
 import android.widget.Button
@@ -11,7 +12,11 @@ import android.widget.ImageView
 import android.widget.TextView
 
 const val RESET_SCORE_ON_ONES = true  // set to true for reg. play
-const val MAX_SCORE = 100 // set to 100 for reg. play
+const val MAX_SCORE = 10 // set to 100 for reg. play
+val You_Games_Won = "You_Games_Won"
+val You_Total_Score = "You_Total_Score"
+val You_Turn_Total = "You_Turn_Total"
+val PLAYER_TRUE = "PLAYER_TRUE"
 
 class MainActivity : AppCompatActivity() {
     lateinit var tvYouPlaying: TextView
@@ -38,13 +43,14 @@ class MainActivity : AppCompatActivity() {
     var diceRollLeftInt = 0
     var diceRollRightInt = 0
     var diceTotalInt = 0
-    val dice = Dice(4)
+    val dice = Dice(6)
     var player = true
     var computer = false
     var compLost = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("PIG_EVENTS", "Inside onCreate")
         setContentView(R.layout.activity_main)
         initApplication()
         Log.i("Callback", "inside onCreate()")
@@ -66,6 +72,37 @@ class MainActivity : AppCompatActivity() {
         diceTotal = findViewById(R.id.diceTotal)
         btnRoll = findViewById(R.id.btnRoll)
         btnHold = findViewById(R.id.btnHold)
+    }
+
+    override fun onRestoreInstanceState(
+        savedInstanceState: Bundle
+    ) {
+        super.onRestoreInstanceState(savedInstanceState)
+        Log.i("PIG_EVENTS", "Inside onRestoreInstanceState")
+        tvYouGamesWon.setText(savedInstanceState.getString(You_Games_Won, "0"))
+        tvYouTotalScore.setText(savedInstanceState.getString(You_Total_Score, "0"))
+        tvYouTurnTotal.setText(savedInstanceState.getString(You_Turn_Total, "0"))
+        player = savedInstanceState.getBoolean(PLAYER_TRUE, true)
+        if(player) {
+            player = true
+            computer = false
+            tvYouPlaying.setBackgroundColor(Color.CYAN)
+            tvCompPlaying.setBackgroundColor(Color.WHITE)
+        } else if (computer){
+            player = false
+            computer = true
+            tvYouPlaying.setBackgroundColor(Color.WHITE)
+            tvCompPlaying.setBackgroundColor(Color.CYAN)
+        }
+    }
+
+    override fun onSaveInstanceState(saveState: Bundle) {
+        super.onSaveInstanceState(saveState)
+        Log.i("PIG_EVENTS", "Inside onSaveInstanceState")
+        saveState.putString(You_Games_Won, tvYouGamesWon.getText().toString())
+        saveState.putString(You_Total_Score, tvYouTotalScore.getText().toString())
+        saveState.putString(You_Turn_Total, tvYouTurnTotal.getText().toString())
+        saveState.putBoolean(PLAYER_TRUE, player)
     }
 
     fun onBtnRollClick(v: View) {
